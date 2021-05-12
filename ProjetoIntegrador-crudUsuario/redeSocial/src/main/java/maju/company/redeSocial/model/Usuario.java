@@ -35,7 +35,6 @@ public class Usuario {
 	private String email;
 	
 	@NotNull
-	@Size(min = 5, max = 20)
 	private String senha;
 
 	public List<Postagem> getPostagem() {
