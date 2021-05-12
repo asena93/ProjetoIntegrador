@@ -7,7 +7,7 @@ public class UsuarioLogin {
     private String senha;
     private String token;
 
-    public String getNome() {
+    public String getNomeCompleto() {
         return nomeCompleto;
     }
     public void setNomeCompleto(String nomeCompleto) {
@@ -16,7 +16,7 @@ public class UsuarioLogin {
     public String getEmail() {
         return email;
     }
-    public void setUsuario(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
     public String getSenha() {
