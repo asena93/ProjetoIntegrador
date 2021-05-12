@@ -20,7 +20,6 @@ import maju.company.redeSocial.service.UsuarioService;
 @CrossOrigin("*")
 public class UsuarioController {
 
-
     @Autowired
     private UsuarioService usuarioService;
 
@@ -31,10 +30,14 @@ public class UsuarioController {
     }
 
     @PostMapping("/cadastrar")
-    public ResponseEntity<Usuario> Post(@RequestBody Usuario email) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(usuarioService.CadastrarUsuario(email));
-    }
+	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
+		Optional<Usuario> user = usuarioService.CadastrarUsuario(usuario);
+		try {
+				return ResponseEntity.ok(user.get());
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().build();
+		}
+	}
 
 
 }
